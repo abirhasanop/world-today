@@ -58,7 +58,7 @@ const displayNews = (allNews) => {
                                     <i class="fa-solid fa-star"></i>
                                     <i class="fa-regular fa-star"></i>
                                 </div>
-                                <a onclick="displayModal()" class="text-primary" data-bs-toggle="modal" data-bs-target="#newsModal"><i class="fa-sharp fa-solid fa-arrow-right"></i></a>
+                                <a onclick="loadModal('${news._id}')" class="text-primary" data-bs-toggle="modal" data-bs-target="#newsModal"><i class="fa-sharp fa-solid fa-arrow-right"></i></a>
                             </div>
                         </div>
                     </div>
@@ -69,8 +69,25 @@ const displayNews = (allNews) => {
   });
 };
 
-const displayModal = () => {
-  console.log("hello");
+const loadModal = (newsId) => {
+  fetch(`https://openapi.programming-hero.com/api/news/${newsId}`)
+    .then((res) => res.json())
+    .then((data) => displayModal(data.data[0]));
+};
+
+const displayModal = (news) => {
+  console.log(news);
+  const modalTitle = document.getElementById("newsModalLabel");
+  modalTitle.innerText = news.title;
+
+  const modalBody = document.getElementById("modal-body");
+  modalBody.innerHTML = `
+  <h6>Author: ${news.author.name}</h6>
+  <p>Published: ${news.author.published_date}</p>
+  <h6>Total Views: ${news.total_view}</h6>
+  <h6>Rating: ${news.rating.number}</h6>
+  <h6>Badge: ${news.rating.badge}</h6>
+  `;
 };
 
 loadCategory();
