@@ -30,7 +30,7 @@ const displayNews = (allNews) => {
   const allNewsContainer = document.getElementById("news-container");
   allNewsContainer.textContent = "";
   allNews.forEach((news) => {
-    console.log(news);
+    // console.log(news);
     const newsDiv = document.createElement("div");
     newsDiv.innerHTML = `
     <div class="card mb-3">
@@ -41,12 +41,14 @@ const displayNews = (allNews) => {
                     <div class="col-md-8">
                         <div class="card-body">
                             <h5 class="card-title">${news.title}</h5>
-                            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional
-                                content. This content is a little bit longer.</p>
+                            <p class="card-text">${news.details}</p>
                             <div class="d-flex justify-content-between align-items-center">
                                 <div class="d-flex align-items-center">
                                     <img  style="width: 50px;" class="img-fluid rounded-circle" src="${news.author.img}" alt="">
+                                   <div class="d-flex flex-column justify-content-center mt-3 ms-2">
                                    <h6>${news.author.name}</h6>
+                                   <p>10/5/2022</p>
+                                   </div>
                                 </div>
                                 <h5>${news.total_view} <i class="fa-sharp fa-solid fa-eye"></i></h5>
                                 <div>
@@ -56,7 +58,7 @@ const displayNews = (allNews) => {
                                     <i class="fa-solid fa-star"></i>
                                     <i class="fa-regular fa-star"></i>
                                 </div>
-                                <div><i class="fa-sharp fa-solid fa-arrow-right"></i></div>
+                                <a onclick="displayModal()" class="text-primary" data-bs-toggle="modal" data-bs-target="#newsModal"><i class="fa-sharp fa-solid fa-arrow-right"></i></a>
                             </div>
                         </div>
                     </div>
@@ -65,6 +67,10 @@ const displayNews = (allNews) => {
     `;
     allNewsContainer.appendChild(newsDiv);
   });
+};
+
+const displayModal = () => {
+  console.log("hello");
 };
 
 loadCategory();
