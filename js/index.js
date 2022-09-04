@@ -29,6 +29,23 @@ const loadNews = (categoryId) => {
 
 const displayNews = (allNews) => {
   // console.log(allNews);
+
+  // sorting strts
+  allNews.sort((a, b) => {
+    if (a.total_view > b.total_view) {
+      return -1;
+    } else if (a.total_view < b.total_view) {
+      return 1;
+    } else {
+      return 0;
+    }
+  });
+  // sorting ends
+
+  const itemsQuantity = allNews.length;
+  const itemsElement = document.getElementById("items");
+  itemsElement.innerText = itemsQuantity;
+
   const noResultMsg = document.getElementById("no-result");
   noResultMsg.textContent = "";
   if (allNews.length === 0) {
@@ -40,7 +57,7 @@ const displayNews = (allNews) => {
   const allNewsContainer = document.getElementById("news-container");
   allNewsContainer.textContent = "";
   allNews.forEach((news) => {
-    // console.log(news);
+    console.log(news);
     const newsDiv = document.createElement("div");
     newsDiv.innerHTML = `
     <div class="card mb-3">

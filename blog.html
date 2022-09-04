@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+
+        <link rel="stylesheet" href="bootstrap/bootstrap.min.css">
+</head>
+
+<body style="background-color: aliceblue;">
+
+<nav class="navbar">
+    <div class="container">
+        <a class="navbar-brand"><span class="bg-primary p-2 rounded-2 text-white">World</span> Today</a>
+        <div class="d-flex" role="search">
+            <h4><a href="index.html">News</a></h4>
+            <h4 class="ms-3"><a href="blog.html">Blog</a></h4>
+        </div>
+    </div>
+</nav>
+<hr class="w-75 mx-auto">
+
+
+
+    <header class="text-center text-warning mb-5">
+        <h1>Blog</h1>
+    </header>
+    <main class="p-5 container bg-white shadow-lg">
+        <section>
+            <header class="mb-4 mt-5">
+                <h2>What is the differenve between forEach, map, filter and find?</h2>
+            </header>
+        
+        
+            <p class="fs-5">forEach just loop over the array and executes the callback but filter executes the callback and
+                check its return value.. map creates a new array by transforming every element in an array individually. filter
+                creates a new array by removing
+                elements that don't belong. The find() method is used to find all the descendant elements of the selected
+                element. It finds the element in the DOM
+                tree by traversing through the root to leaf. The filter() method is used to filters all the elements and returns
+                the
+                element that matches and the element that do not match are removed.</p>
+        </section>
+        <section>
+            <header class="mb-4 mt-5">
+                <h2>What is the differenve between Arrow Function and Regular Function</h2>
+            </header>
+            <p class="fs-5"><strong>Arrow Function: </strong>arrow functions do not have their own this . The value of this
+                inside an arrow function remains the same throughout the
+                lifecycle of the function and is always bound to the value of this in the closest non-arrow parent function <br>
+        
+                <strong>Regular Function: </strong>Regular functions have their own this.
+            </p>
+        
+        
+        </section>
+       
+
+        <section>
+            <header class="mb-4">
+                <h2>What is the differenve between var, let, const</h2>
+            </header>
+            <p class="fs-5">
+                <strong>Var: </strong>It can be declared without initialization.In JavaScript, var is a reserved keyword which is followed by a reference variable name. The name defined after the
+                keyword can then be used as a pointer to the data in-memory. <br>
+                <strong>let: </strong>It can be declared without initialization. The let declaration was introduced with ES6 and has since become the preferred method for variable declaration. It is
+                regarded as an improvement over var declarations and is block-scoped (variables that can be accessed only in the
+                immediate block), circumventing the main issue that can arise with using var. <br>
+                <strong>const: </strong>It cannot be declared without initialization.The const declaration was introduced with ES6, alongside let, and it is very similar to let. const points to data in
+                memory that holds constant values, as the name implies. const reference variables cannot be reassigned to a different
+                object in memory
+            </p>
+        </section>
+        
+
+        
+        
+
+    </main>
+
+
+
+
+        <script src="bootstrap/bootstrap.min.js"></script>
+</body>
+
+</html>

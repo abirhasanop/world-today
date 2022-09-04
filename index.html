@@ -14,8 +14,8 @@
         <div class="container">
             <a class="navbar-brand"><span class="bg-primary p-2 rounded-2 text-white">World</span> Today</a>
             <div class="d-flex" role="search">
-                <h4>News</h4>
-                <h4 class="ms-3">Blogs</h4>
+                <h4><a href="index.html">News</a></h4>
+                <h4 class="ms-3"><a href="blog.html">Blog</a></h4> 
             </div>
         </div>
     </nav> 
@@ -36,6 +36,23 @@
     </nav>
 
     <main class="container my-4">
+        <section>
+            <h4><span id="items"></span> Items Found</h4>
+        </section>
+
+        <section class="my-4 d-flex justify-content-between">
+            <select class="form-select w-25" aria-label="Default select example">
+                <option selected>Sort by</option>
+                <option value="1">Default</option>
+                <option value="2">Views</option>
+                <option value="3">Ratings</option>
+            </select>
+            <div>
+                <button class="btn btn-primary">Todays Pick</button>
+                <button class="btn btn-outline-primary">Trending</button>
+            </div>
+            
+        </section>
 
         <section id="no-result"></section>
 
